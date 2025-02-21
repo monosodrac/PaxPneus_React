@@ -1,0 +1,65 @@
+@keyframes pular {
+    0% {
+        transform: translateY(0); /* Posição original */
+    }
+    5% {
+        transform: translateY(.2rem); /* Pular para cima */
+    }
+    10% {
+        transform: translateY(.4rem); /* Pular para cima */
+    }
+    15% {
+        transform: translateY(.2rem); /* Pular para cima */
+    }
+    20% {
+        transform: translateY(0); /* Voltar à posição original */
+    }
+    25% {
+        transform: translateY(-0.15rem); /* Voltar à posição original */
+    }
+    30% {
+        transform: translateY(-0.3rem); /* Pular para cima */
+    }
+    35% {
+        transform: translateY(-0.15rem); /* Pular para cima */
+    }
+    40% {
+        transform: translateY(0); /* Voltar à posição original */
+    }
+    45% {
+        transform: translateY(.1rem); /* Voltar à posição original */
+    }
+    50% {
+        transform: translateY(.2rem); /* Pular para cima */
+    }
+    55% {
+        transform: translateY(.1rem); /* Pular para cima */
+    }
+    60% {
+        transform: translateY(0); /* Voltar à posição original */
+    }
+    65% {
+        transform: translateY(-0.05rem); /* Voltar à posição original */
+    }
+    70% {
+        transform: translateY(-0.1rem); /* Pular para cima */
+    }
+    75% {
+        transform: translateY(-0.05rem); /* Pular para cima */
+    }
+    80% {
+        transform: translateY(0); /* Voltar à posição original */
+    }
+    85% {
+        transform: translateY(.02rem); /* Voltar à posição original */
+    }
+    90% {
+        transform: translateY(.05rem); /* Pular para cima */
+    }
+    95% {
+        transform: translateY(.02rem); /* Pular para cima */
+    }
+    100% {
+        transform: translateY(0); /* Voltar à posição original */
+    }
+}

@@ -1,0 +1,71 @@
+@use 'variaveis';
+@use 'keyframes';
+
+.hero {
+    .ctner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F4F4F4;
+        height: 14rem;
+        border: 1px solid rgba(0, 0, 0, .3);
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+
+        .first-msg {
+            font-family: "Montserrat", Jost;
+            text-align: center;
+            margin: 0 2rem;
+            color: #333;
+        }
+
+        h3 {
+            font-weight: 900;
+            font-size: 1.8rem;
+            
+            span {
+                color: #FFA600;
+            }
+        }
+
+        .second-msg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 2rem;
+        }
+        
+        h4 {
+            font-size: 1.1rem;
+        }
+
+        img {
+            display: block;
+            height: 15.7rem;
+            z-index: 1;
+            transition: transform 1s ease;
+            
+            &:hover {
+                animation: pular 1s ease;
+            }
+        }
+        
+        a {
+            padding: 1.5rem;
+            margin-left: -1.1rem;
+            border-radius: 8px;
+            background-color: rgba(255, 166, 0, 9);
+            font-size: 1.2rem;
+            font-style: italic;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            transition: transform 1s ease;
+
+            &:hover {
+                background-color: lighten(#000, 3%);
+                transition: transform 1s ease;
+            }
+        }
+    }
+}

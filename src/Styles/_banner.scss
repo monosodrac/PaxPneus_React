@@ -1,0 +1,18 @@
+.banner {
+    .ctner {
+        margin: 2rem 7rem;
+        .conheca {
+            display: flex;
+            justify-content: center;
+            gap: 1.5%;
+
+            a {
+                width: 48.5%;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}

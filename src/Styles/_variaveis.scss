@@ -1,0 +1,12 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../assets/fonts/Poppins/Poppins-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(../assets/fonts/Roboto/static/Roboto_SemiCondensed-Regular.ttf);
+}
+
+$fontPoppins: 'Poppins', Jost;
+$fontRoboto: 'Roboto', Jost;

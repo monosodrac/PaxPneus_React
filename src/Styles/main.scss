@@ -1,0 +1,50 @@
+@use 'variaveis';
+@use 'header';
+@use 'hero';
+@use 'buscar';
+@use 'ofertas';
+@use 'carrossel1';
+@use 'banner';
+@use 'footer';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, Jost;
+    list-style: none;
+}
+
+.ctner {
+    margin: 0 5rem;
+}
+
+@mixin text($fontSize: 1.5rem) {
+    font-size: $fontSize;
+    color: #333;
+    text-align: center;
+}
+
+@mixin title($fontSize: 2rem) {
+    @include text($fontSize);
+    font-family: 'Poppins', Jost;
+    color: #242424;
+    font-weight: 900;
+    text-align: center;
+}
+
+.text {
+    @include text;
+
+    @media (max-width: 768px) {
+        @include text(.9rem);
+    }
+}
+
+.title {
+    @include title;
+
+    @media (max-width: 768px) {
+        @include title(1.5rem);
+    }
+}

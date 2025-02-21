@@ -1,0 +1,99 @@
+@use 'variaveis';
+
+footer {
+    background-color: #101010;
+    margin-top: 4rem;
+
+    .ctner {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 10%;
+
+        .footer1 {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 0 5rem;
+
+            h3 {
+                font-size: 1.5rem;
+                font-family: variaveis.$fontRoboto;
+                color: #fff;
+            }
+
+            h4 {
+                font-size: 2rem;
+                font-family: variaveis.$fontPoppins;
+                font-weight: bold;
+                color: #FFA600;
+            }
+
+            img {
+                margin: 1rem 0;
+                height: 8rem;
+            }
+
+            p {
+                font-family: variaveis.$fontPoppins;
+                font-size: 1.1rem;
+                color: #C6C6C6;
+            }
+        }
+
+        .footer2 {
+            margin: 2rem 0;
+
+            ul {
+                list-style: none;
+                
+                li {
+                    margin: .5rem 0;
+                    font-weight: bold;
+                    color: #C6C6C6;
+
+                    svg {
+                        margin-right: .5rem;
+                        color: #FFA600;
+                        font-size: 1.1rem;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: #C6C6C6;
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+                }
+
+                #horario {
+                    font-weight: normal;
+                }
+            }
+
+            #politicas {
+                li {
+                    border-bottom: 1px solid transparent;
+
+                    &:hover {
+                        border-color: #C6C6C6;
+                    }
+
+                    p {
+                        margin: 0 1rem;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    #direitos {
+        margin: 0;
+        padding: 1rem;
+        text-align: center;
+        font-family: variaveis.$fontPoppins;
+        font-size: 1rem;
+        color: #C9C9C9;
+    }
+}
