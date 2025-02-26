@@ -1,0 +1,55 @@
+@use 'variaveis';
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &__ctner {
+        padding: 1rem;
+        border: solid 3px #000;
+        border-radius: 7px;
+        background-color: #F4F4F4;
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            border: solid 3px #FFA600;
+            border-radius: 7px;
+            background-color: #333;
+
+            img {
+                width: 20rem;
+                margin-bottom: 2rem;
+            }
+            
+            input {
+                margin-bottom: 1rem;
+                padding: .5rem;
+                border: solid 2px #FFA600;
+                border-radius: 7px;
+                width: 20rem;
+                outline: none;
+            }
+            
+            button {
+                padding: .5rem;
+                border: none;
+                border-radius: 7px;
+                width: 20rem;
+                font-weight: bold;
+                background-color: #FFA600;
+                color: #000;
+                
+                &:hover {
+                    background-color: #F4F4F4;
+                    color: #FFA600;
+                }
+            }
+        }
+    }
+}
