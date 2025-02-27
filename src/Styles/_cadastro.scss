@@ -13,7 +13,7 @@
         padding: 1rem;
         border: solid 3px #000;
         border-radius: 7px;
-        background-color: #F4F4F4;
+        background-color: variaveis.$corFundo;
         width: 80%;
 
         &__form {
@@ -22,7 +22,7 @@
             justify-content: center;
             align-items: center;
             padding: 3rem;
-            border: solid 3px #FFA600;
+            border: solid 3px variaveis.$corSecundaria;
             border-radius: 7px;
             width: 100%;
             background-color: #333;
@@ -37,6 +37,10 @@
                 grid-template-columns: 2fr 1fr;
                 gap: 2%;
                 width: 100%;
+
+                @media (max-width: 767px) {
+                    display: block;
+                }
             }
 
             &__item2 {
@@ -44,13 +48,10 @@
                 grid-template-columns: 5fr 1fr 2fr;
                 gap: 2%;
                 width: 100%;
-            }
-
-            &__item2 {
-                display: grid;
-                grid-template-columns: 5fr 1fr 2fr;
-                gap: 2%;
-                width: 100%;
+                
+                @media (max-width: 767px) {
+                    display: block;
+                }
             }
 
             &__item3 {
@@ -58,29 +59,59 @@
                 grid-template-columns: 4fr 2fr 1fr;
                 gap: 2%;
                 width: 100%;
+
+                @media (max-width: 767px) {
+                    display: block;
+                }
             }
 
             input {
                 width: 100%;
                 margin-bottom: 1rem;
                 padding: .5rem;
-                border: solid 2px #FFA600;
+                border: solid 2px variaveis.$corSecundaria;
                 border-radius: 7px;
                 outline: none;
             }
 
             button {
+                margin-bottom: 1rem;
                 padding: .5rem;
                 border: none;
                 border-radius: 7px;
                 width: 20rem;
                 font-weight: bold;
-                background-color: #FFA600;
+                background-color: variaveis.$corSecundaria;
                 color: #000;
 
                 &:hover {
-                    background-color: #F4F4F4;
-                    color: #FFA600;
+                    background-color: variaveis.$corFundo;
+                    color: variaveis.$corSecundaria;
+                }
+
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
+            }
+
+            a {
+                padding: .5rem;
+                border: none;
+                border-radius: 7px;
+                width: 20rem;
+                text-align: center;
+                text-decoration: none;
+                font-weight: bold;
+                background-color: variaveis.$corSecundaria;
+                color: #000;
+
+                &:hover {
+                    background-color: variaveis.$corFundo;
+                    color: variaveis.$corSecundaria;
+                }
+
+                @media (max-width: 767px) {
+                    width: 100%;
                 }
             }
         }

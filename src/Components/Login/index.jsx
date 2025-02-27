@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate, Link } from 'react-router-dom';
 
-// import Logo from '../../assets/imgs/Logo-Pax-rodape.png'
 import Logo from '../../assets/imgs/Logo.png'
 
 export default function Login() {
@@ -24,7 +24,7 @@ export default function Login() {
         <>
             <section className="login">
                 <div className="login__ctner">
-                        <img src={Logo} alt="" />
+                    <img src={Logo} alt="" />
                     <form onSubmit={makeLogin}>
                         <input
                             type="email"
@@ -39,6 +39,7 @@ export default function Login() {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         <button type="submit">Entrar</button>
+                        <Link to="/">Voltar</Link>
                     </form>
                 </div>
             </section>

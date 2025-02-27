@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, Link} from 'react-router-dom';
 
 import Logo from '../../../assets/imgs/Logo-Pax-rodape.png'
 
@@ -105,6 +105,7 @@ export default function CadUsuarios() {
                             />
                         </div>
                         <button type="submit">Enviar</button>
+                        <Link to="/">Voltar</Link>
                     </form>
                 </div>
             </section>

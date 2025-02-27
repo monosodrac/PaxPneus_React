@@ -6,7 +6,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #F4F4F4;
+        background-color: variaveis.$corFundo;
         height: 14rem;
         border: 1px solid rgba(0, 0, 0, .3);
         border-top: none;
@@ -24,7 +24,7 @@
             font-size: 1.8rem;
             
             span {
-                color: #FFA600;
+                color: variaveis.$corSecundaria;
             }
         }
 

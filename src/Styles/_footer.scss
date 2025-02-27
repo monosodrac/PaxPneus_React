@@ -24,7 +24,7 @@ footer {
                 font-size: 2rem;
                 font-family: variaveis.$fontPoppins;
                 font-weight: bold;
-                color: #FFA600;
+                color: variaveis.$corSecundaria;
             }
 
             img {
@@ -52,7 +52,7 @@ footer {
 
                     svg {
                         margin-right: .5rem;
-                        color: #FFA600;
+                        color: variaveis.$corSecundaria;
                         font-size: 1.1rem;
                     }
 
