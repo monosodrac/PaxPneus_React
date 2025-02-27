@@ -1,27 +1,22 @@
 @use 'variaveis';
 
-.login {
+.register {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
+    
     &__ctner {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 1rem;
         border: solid 3px #000;
         border-radius: 7px;
         background-color: #F4F4F4;
+        width: 80%;
 
-        img {
-            width: 10rem;
-            margin: 2rem;
-        }
-        
-        form {
+        &__form {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -29,17 +24,51 @@
             padding: 3rem;
             border: solid 3px #FFA600;
             border-radius: 7px;
+            width: 100%;
             background-color: #333;
-            
+
+            img {
+                width: 10rem;
+                margin: 2rem;
+            }
+
+            &__item1 {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 2%;
+                width: 100%;
+            }
+
+            &__item2 {
+                display: grid;
+                grid-template-columns: 5fr 1fr 2fr;
+                gap: 2%;
+                width: 100%;
+            }
+
+            &__item2 {
+                display: grid;
+                grid-template-columns: 5fr 1fr 2fr;
+                gap: 2%;
+                width: 100%;
+            }
+
+            &__item3 {
+                display: grid;
+                grid-template-columns: 4fr 2fr 1fr;
+                gap: 2%;
+                width: 100%;
+            }
+
             input {
+                width: 100%;
                 margin-bottom: 1rem;
                 padding: .5rem;
                 border: solid 2px #FFA600;
                 border-radius: 7px;
-                width: 20rem;
                 outline: none;
             }
-            
+
             button {
                 padding: .5rem;
                 border: none;
@@ -48,7 +77,7 @@
                 font-weight: bold;
                 background-color: #FFA600;
                 color: #000;
-                
+
                 &:hover {
                     background-color: #F4F4F4;
                     color: #FFA600;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-import Logo from '../../assets/imgs/Logo-Pax-rodape.png'
+// import Logo from '../../assets/imgs/Logo-Pax-rodape.png'
+import Logo from '../../assets/imgs/Logo.png'
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -15,20 +16,22 @@ export default function Login() {
         } else {
             alert("Usuário ou Senha Incorretos");
         };
+        setEmail("");
+        setPassword("");
     };
 
     return (
         <>
             <section className="login">
                 <div className="login__ctner">
+                        <img src={Logo} alt="" />
                     <form onSubmit={makeLogin}>
-                    <img src={Logo} alt="" />
                         <input
-                            type="text"
+                            type="email"
                             placeholder="Digite seu E-mail"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            />
+                        />
                         <input
                             type="text"
                             placeholder="Digite sua Senha"

@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 
 import Logo from '../../assets/imgs/logo.png'
 
-export default function () {
+export default function Header() {
     return (
         <>
             <header>
@@ -17,14 +18,14 @@ export default function () {
                             </h2>
                             <ul>
                                 <li>
-                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=5514991920033&location=7943">
-                                        (14) 99192-0033
-                                    </a>
+                                    <Link to="/login">
+                                        Login
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=5511975269029">
-                                        (14) 97526-9029
-                                    </a>
+                                    <Link to="/cadastro-usuario">
+                                        Cadastrar-se
+                                    </Link>
                                 </li>
                             </ul>
                         </section>
