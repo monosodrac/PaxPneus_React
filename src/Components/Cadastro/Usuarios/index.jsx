@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import {useNavigate, Link} from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import {toast} from 'react-toastify';
+import apiLocal from '../../../Api/apiLocal';
 
 import Logo from '../../../assets/imgs/Logo-Pax-rodape.png'
 
@@ -18,34 +20,58 @@ export default function CadUsuarios() {
 
     const navigate = useNavigate();
 
-    function registerUser(e) {
-        e.preventDefault();
-        navigate("/Login");
+    async function cadastrarUsuarios(e) {
+        try {
+            e.preventDefault();
+            await apiLocal.post('CadastrarUsuarios', {
+                nome,
+                cpf,
+                cep,
+                rua,
+                numero,
+                complemento,
+                bairro,
+                cidade,
+                uf,
+                email,
+                password
+            });
+            toast.success('Cadastro Efetuado com Sucesso', {
+                toastId: 'ToastId'
+            });
+            navigate('/login');
+        } catch(err) {
+            toast.error('Erro ao Comunicar com Backend', {
+                toastId: 'ToastId'
+            });
+        };
     };
 
     return (
         <>
             <section className="register">
                 <div className="register__ctner">
-                    <form onSubmit={registerUser} className="register__ctner__form">
+                    <form onSubmit={cadastrarUsuarios} className="register__ctner__form">
                         <img src={Logo} alt="" />
                         <input
                             type="text"
                             placeholder="Digite seu Nome"
-                            value={nome}
                             required
+                            value={nome}
                             onChange={(e) => setNome(e.target.value)}
                         />
                         <div className="register__ctner__form__item1">
                             <input
                                 type="text"
                                 placeholder="Digite seu CPF"
+                                required
                                 value={cpf}
                                 onChange={(e) => setCpf(e.target.value)}
                             />
                             <input
                                 type="text"
                                 placeholder="Digite seu CEP"
+                                required
                                 value={cep}
                                 onChange={(e) => setCep(e.target.value)}
                             />
@@ -54,12 +80,14 @@ export default function CadUsuarios() {
                             <input
                                 type="text"
                                 placeholder="Rua"
+                                required
                                 value={rua}
                                 onChange={(e) => setRua(e.target.value)}
                             />
                             <input
                                 type="text"
                                 placeholder="Nº"
+                                required
                                 value={numero}
                                 onChange={(e) => setNumero(e.target.value)}
                             />
@@ -80,12 +108,14 @@ export default function CadUsuarios() {
                             <input
                                 type="text"
                                 placeholder="Cidade"
+                                required
                                 value={cidade}
                                 onChange={(e) => setCidade(e.target.value)}
                             />
                             <input
                                 type="text"
                                 placeholder="UF (Estado)"
+                                required
                                 value={uf}
                                 onChange={(e) => setUf(e.target.value)}
                             />
@@ -94,12 +124,14 @@ export default function CadUsuarios() {
                             <input
                                 type="email"
                                 placeholder="Digite seu Email"
+                                required
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                             <input
                                 type="password"
                                 placeholder="Digite sua Senha"
+                                required
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
