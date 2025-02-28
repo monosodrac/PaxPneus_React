@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import { useNavigate, Link } from 'react-router-dom';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 
-import {AutenticadoContexto} from '../../Contexts/authContexts';
+import { AutenticadoContexto } from '../../Contexts/authContexts';
 
 import Logo from '../../assets/imgs/Logo.png'
 
@@ -23,13 +23,11 @@ export default function Login() {
         try {
             await loginEntrada(email, password);
             navigator("/");
-        } catch(err) {
+        } catch (err) {
             toast.error("Usuario ou Senha Incorretos", {
                 toastId: 'ToastId'
             });
         };
-        setEmail("");
-        setPassword("");
     };
 
     return (

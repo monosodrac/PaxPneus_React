@@ -25,12 +25,12 @@ export default function AuthProvider({ children }) {
                     Authorization: `Bearer ${token}`
                 }
             });
-            if(resposta.data.id) {
+            if (resposta.data.id) {
                 setTokenT(true);
                 localStorage.setItem('@id', JSON.stringify(resposta.data.id));
                 localStorage.setItem('@nome', JSON.stringify(resposta.data.nome));
             };
-        } catch(err) {
+        } catch (err) {
             setTokenT(false);
         };
     };
@@ -44,15 +44,16 @@ export default function AuthProvider({ children }) {
             localStorage.setItem('@id', JSON.stringify(resposta.data.id));
             localStorage.setItem('@token', JSON.stringify(resposta.data.token));
             localStorage.setItem('@nome', JSON.stringify(resposta.data.nome));
+            console.log(token)
             setTokenT(true);
-        } catch(err) {
-            toast.error('Erro de Comunicação');
+        } catch (err) {
+            // toast.error('Erro de Comunicação');
             // toast.error(err.response.data.error);
         };
     };
 
-    return(
-        <AutenticadoContexto.Provider value={({autenticado, loginEntrada, verificarToken, token})}>
+    return (
+        <AutenticadoContexto.Provider value={({ autenticado, loginEntrada, verificarToken, token })}>
             {children}
         </AutenticadoContexto.Provider>
     );
