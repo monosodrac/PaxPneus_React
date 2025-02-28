@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate, Link } from 'react-router-dom';
+import {toast} from 'react-toastify';
+
+import {AutenticadoContexto} from '../../Contexts/authContexts';
 
 import Logo from '../../assets/imgs/Logo.png'
 
@@ -7,14 +10,23 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    function makeLogin(e) {
+    const { verificarToken, loginEntrada } = useContext(AutenticadoContexto);
+    verificarToken();
+
+    const navigator = useNavigate();
+
+    async function makeLogin(e) {
         e.preventDefault();
         if (!email || !password) {
             alert("Campos em branco");
-        } else if (email == 'teste@teste.com' && password == '123456') {
-            alert("Login efetuado com Sucesso");
-        } else {
-            alert("Usuário ou Senha Incorretos");
+        }
+        try {
+            await loginEntrada(email, password);
+            navigator("/");
+        } catch(err) {
+            toast.error("Usuario ou Senha Incorretos", {
+                toastId: 'ToastId'
+            });
         };
         setEmail("");
         setPassword("");
@@ -33,7 +45,7 @@ export default function Login() {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                         <input
-                            type="text"
+                            type="password"
                             placeholder="Digite sua Senha"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}

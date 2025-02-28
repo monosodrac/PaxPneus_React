@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { AutenticadoContexto } from '../Contexts/authContexts';
 
 import Header from '../Components/Header'
 import Hero from '../Components/Hero'
@@ -12,6 +14,10 @@ import Banner3 from '../Components/Banners/BannerThree'
 import Footer from '../Components/Footer'
 
 export default function Inicio() {
+
+    const { verificarToken } = useContext(AutenticadoContexto);
+    verificarToken();
+
     return (
         <>
             <Header />

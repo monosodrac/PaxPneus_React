@@ -10,8 +10,8 @@ export default function Footer() {
     return (
         <>
             <footer>
-                <div class="ctner">
-                    <div class="footer1">
+                <div className="ctner">
+                    <div className="footer1">
                         <h3>Evite dor de cabeça!</h3>
                         <h4>CONFIANÇA E QUALIDADE É</h4>
                         <img src={Logo} alt="" />
@@ -22,7 +22,7 @@ export default function Footer() {
                             </p>
                     </div>
 
-                    <div class="footer2">
+                    <div className="footer2">
                         <ul>
                             <li>
                                 <a target="_blank" href="">

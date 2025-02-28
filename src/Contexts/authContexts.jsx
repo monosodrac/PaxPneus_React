@@ -25,7 +25,14 @@ export default function AuthProvider({ children }) {
                     Authorization: `Bearer ${token}`
                 }
             });
-        } catch(err) {};
+            if(resposta.data.id) {
+                setTokenT(true);
+                localStorage.setItem('@id', JSON.stringify(resposta.data.id));
+                localStorage.setItem('@nome', JSON.stringify(resposta.data.nome));
+            };
+        } catch(err) {
+            setTokenT(false);
+        };
     };
 
     async function loginEntrada(email, password) {
@@ -34,10 +41,10 @@ export default function AuthProvider({ children }) {
                 email,
                 password
             });
-
             localStorage.setItem('@id', JSON.stringify(resposta.data.id));
             localStorage.setItem('@token', JSON.stringify(resposta.data.token));
             localStorage.setItem('@nome', JSON.stringify(resposta.data.nome));
+            setTokenT(true);
         } catch(err) {
             toast.error(err.response.data.error);
         };
