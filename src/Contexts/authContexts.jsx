@@ -46,7 +46,8 @@ export default function AuthProvider({ children }) {
             localStorage.setItem('@nome', JSON.stringify(resposta.data.nome));
             setTokenT(true);
         } catch(err) {
-            toast.error(err.response.data.error);
+            toast.error('Erro de Comunicação');
+            // toast.error(err.response.data.error);
         };
     };
 
