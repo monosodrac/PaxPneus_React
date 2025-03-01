@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AutenticadoContexto } from '../../Contexts/authContexts';
 import { Link } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 
 import Logo from '../../assets/imgs/logo.png'
 
 export default function Header() {
+    const { verificarToken, autenticado } = useContext(AutenticadoContexto);
+    verificarToken();
+
     return (
         <>
             <header>
@@ -17,16 +21,33 @@ export default function Header() {
                                 </a>
                             </h2>
                             <ul>
-                                <li>
-                                    <Link to="/login">
-                                        Login
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/cadastro-usuario">
-                                        Cadastrar-se
-                                    </Link>
-                                </li>
+                                {autenticado === true ?
+                                <>
+                                    <li>
+                                        <Link to="/login">
+                                            Perfil
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/cadastro-usuario">
+                                            Carrinho
+                                        </Link>
+                                    </li>
+                                </>
+                                :
+                                <>
+                                    <li>
+                                        <Link to="/login">
+                                            Login
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/cadastro-usuario">
+                                            Cadastrar-se
+                                        </Link>
+                                    </li>
+                                </>
+                                }
                             </ul>
                         </section>
 
@@ -37,9 +58,9 @@ export default function Header() {
                                 </a>
                             </h1>
                             <input type="text" placeholder="Pesquisar..." />
-                                <button className="btn-search">
-                                    <IoSearch />
-                                </button>
+                            <button className="btn-search">
+                                <IoSearch />
+                            </button>
                         </section>
                     </div>
                 </div>
