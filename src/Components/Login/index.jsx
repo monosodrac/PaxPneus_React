@@ -27,6 +27,7 @@ export default function Login() {
             toast.error("Usuario ou Senha Incorretos", {
                 toastId: 'ToastId'
             });
+            navigator("/login");
         };
     };
 

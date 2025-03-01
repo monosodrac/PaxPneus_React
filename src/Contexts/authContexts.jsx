@@ -31,7 +31,7 @@ export default function AuthProvider({ children }) {
                 localStorage.setItem('@nome', JSON.stringify(resposta.data.nome));
             };
         } catch (err) {
-            setTokenT(false);
+            
         };
     };
 
@@ -44,11 +44,10 @@ export default function AuthProvider({ children }) {
             localStorage.setItem('@id', JSON.stringify(resposta.data.id));
             localStorage.setItem('@token', JSON.stringify(resposta.data.token));
             localStorage.setItem('@nome', JSON.stringify(resposta.data.nome));
-            console.log(token)
             setTokenT(true);
         } catch (err) {
             // toast.error('Erro de Comunicação');
-            // toast.error(err.response.data.error);
+            toast.error(err.response.data.error);
         };
     };
 
