@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AutenticadoContexto } from '../../Contexts/authContexts';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 
 import Logo from '../../assets/imgs/logo.png'
@@ -9,6 +9,13 @@ export default function Header() {
     const { verificarToken, autenticado } = useContext(AutenticadoContexto);
     verificarToken();
 
+    const navigator = useNavigate();
+
+    function sair() {
+        localStorage.clear();
+        navigator("/login");
+    };
+
     return (
         <>
             <header>
@@ -16,37 +23,40 @@ export default function Header() {
                     <div className="header">
                         <section className="first">
                             <h2>
-                                <a href="#">
+                                <a href="#" id="lojas">
                                     Nossas Lojas
                                 </a>
                             </h2>
                             <ul>
                                 {autenticado === true ?
-                                <>
-                                    <li>
-                                        <Link to="/login">
-                                            Perfil
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/cadastro-usuario">
-                                            Carrinho
-                                        </Link>
-                                    </li>
-                                </>
-                                :
-                                <>
-                                    <li>
-                                        <Link to="/login">
-                                            Login
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/cadastro-usuario">
-                                            Cadastrar-se
-                                        </Link>
-                                    </li>
-                                </>
+                                    <>
+                                        <li>
+                                            <Link to="/perfil">
+                                                Perfil
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/carrinho">
+                                                Carrinho
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <button onClick={sair}>Sair</button>
+                                        </li>
+                                    </>
+                                    :
+                                    <>
+                                        <li>
+                                            <Link to="/login">
+                                                Login
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/cadastro-usuario">
+                                                Cadastrar-se
+                                            </Link>
+                                        </li>
+                                    </>
                                 }
                             </ul>
                         </section>

@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { AutenticadoContexto } from "../Contexts/authContexts";
@@ -18,18 +17,8 @@ export default function Dashboard() {
     const { verificarToken } = useContext(AutenticadoContexto);
     verificarToken();
 
-    const navigator = useNavigate();
-
-    function sair() {
-        localStorage.clear();
-        navigator("/login");
-    };
-
     return (
         <>
-            <h1>Dashboard</h1>
-            <button onClick={sair}>Sair</button>
-
             <Header />
             <Hero />
             <Buscar />
