@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AutenticadoContexto } from '../../../Contexts/authContexts';
 import { useNavigate, Link } from 'react-router-dom';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import apiLocal from '../../../Api/apiLocal';
 
 import Logo from '../../../assets/imgs/Logo-Pax-rodape.png'
 
 export default function CadUsuarios() {
+    const { verificarToken } = useContext(AutenticadoContexto)
+    verificarToken()
+
+    const [imagem, setImagem] = useState(null);
     const [nome, setNome] = useState('');
     const [cpf, setCpf] = useState('');
     const [cep, setCep] = useState('');
@@ -20,27 +25,41 @@ export default function CadUsuarios() {
 
     const navigate = useNavigate();
 
+    function getImagem(e) {
+        if(!e.target.files) {
+            return;
+        };
+        const image = e.target.files[0];
+        if(image.type === 'image/png' || image.type === 'image/jpeg' || image.type === 'image/jpg') {
+            setImagem(image);
+        };
+    };
+
     async function cadastrarUsuarios(e) {
         try {
             e.preventDefault();
-            await apiLocal.post('CadastrarUsuarios', {
-                nome,
-                cpf,
-                cep,
-                rua,
-                numero,
-                complemento,
-                bairro,
-                cidade,
-                uf,
-                email,
-                password
-            });
-            toast.success('Cadastro Efetuado com Sucesso', {
+            const data = new FormData();
+            data.append('file', imagem);
+            data.append('nome', nome);
+            data.append('cpf', cpf);
+            data.append('cep', cep);
+            data.append('rua', rua);
+            data.append('numero', numero);
+            data.append('complemento', complemento);
+            data.append('bairro', bairro);
+            data.append('cidade', cidade);
+            data.append('uf', uf);
+            data.append('email', email);
+            data.append('password', password);
+            const resposta = await apiLocal.post('/CadastrarUsuarios', data);
+            toast.success(resposta.data.dados, {
                 toastId: 'ToastId'
             });
+            // toast.success('Cadastro Efetuado com Sucesso', {
+            //     toastId: 'ToastId'
+            // });
             navigate('/login');
-        } catch(err) {
+        } catch (err) {
             toast.error('Erro ao Comunicar com Backend', {
                 toastId: 'ToastId'
             });
@@ -53,6 +72,11 @@ export default function CadUsuarios() {
                 <div className="register__ctner">
                     <form onSubmit={cadastrarUsuarios} className="register__ctner__form">
                         <img src={Logo} alt="" />
+                        <input
+                            type="file"
+                            accept="image/jpeg, image/png"
+                            onChange={getImagem}
+                        />
                         <input
                             type="text"
                             placeholder="Digite seu Nome"
