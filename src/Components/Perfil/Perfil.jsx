@@ -1,16 +1,30 @@
-import React, {useContext, useState, useEffect} from 'react';
-import {AutenticadoContexto} from '../../Contexts/authContexts';
+import React, { useContext, useState, useEffect } from 'react';
+import { AutenticadoContexto } from '../../Contexts/authContexts';
 import apiLocal from '../../Api/apiLocal';
 
+import { NavItem, Usuario, Conta, Compras } from './Components'
+
 export default function Perfil() {
-    const {verificarToken, token} = useContext(AutenticadoContexto);
+    const { verificarToken } = useContext(AutenticadoContexto);
     verificarToken();
 
-    const [dados, setDados] = useState(['']);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const navItems = ['Informações do usuario', 'Informações da conta', 'Histórico de compras'];
 
-    // useEffect(() => {
-    //     async function consultarDados() {};
-    // }, []);
+    const handleClick = (index) => {
+        setActiveIndex(index);
+    };
+
+    const renderizar = () => {
+        switch (activeIndex) {
+            case 0:
+                return <Usuario />
+            case 1:
+                return <Conta />
+            case 2:
+                return <Compras />
+        };
+    };
 
     return (
         <>
@@ -18,21 +32,18 @@ export default function Perfil() {
                 <aside>
                     <nav>
                         <ul>
-                            <li>
-                                Informações do usuário
-                            </li>
-                            <li>
-                                Informações da conta
-                            </li>
-                            <li>
-                                Histórico de compras
-                            </li>
+                            {navItems.map((item, index) => (
+                                <NavItem
+                                    key={index}
+                                    name={item}
+                                    isActive={index === activeIndex}
+                                    onClick={() => handleClick(index)}
+                                />
+                            ))}
                         </ul>
                     </nav>
                 </aside>
-                <div className="ctner">
-                    {/* <img src={} alt="" /> */}
-                </div>
+                {renderizar()}
             </section>
         </>
     );

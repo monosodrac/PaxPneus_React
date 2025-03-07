@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Dashboard from '../Dashboard'
+import Perfil from '../Components/Perfil/Perfil';
 
 export default function Autenticados() {
     return (
@@ -8,6 +9,8 @@ export default function Autenticados() {
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Dashboard />} />
+
+                    <Route path='/perfil' element={<Perfil />} />
 
                     <Route path='*' element={<Dashboard />} />
                 </Routes>
