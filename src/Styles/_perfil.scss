@@ -9,7 +9,7 @@
         left: 0;
         border: 1px solid variaveis.$corPrincipal;
         background-color: variaveis.$corFundo;
-
+        
         ul {
             padding: 0;
             padding-top: 10rem;
@@ -35,6 +35,7 @@
 
     .ctner {
         padding: 5rem;
+        width: 80%;
 
         .info__usuario {
             img {
@@ -68,6 +69,6 @@
             }
         }
 
-        .hist__compras {}
+        // .hist__compras {}
     }
 }

@@ -7,8 +7,8 @@ import apiLocal from '../../../Api/apiLocal';
 import Logo from '../../../assets/imgs/Logo-Pax-rodape.png'
 
 export default function CadUsuarios() {
-    const { verificarToken } = useContext(AutenticadoContexto)
-    verificarToken()
+    const { verificarToken } = useContext(AutenticadoContexto);
+    verificarToken();
 
     const [imagem, setImagem] = useState(null);
     const [nome, setNome] = useState('');
@@ -30,7 +30,7 @@ export default function CadUsuarios() {
             return;
         };
         const image = e.target.files[0];
-        if(image.type === 'image/png' || image.type === 'image/jpeg' || image.type === 'image/jpg') {
+        if (image.type === 'image/png' || image.type === 'image/jpeg' || image.type === 'image/jpg') {
             setImagem(image);
         };
     };
@@ -51,19 +51,23 @@ export default function CadUsuarios() {
             data.append('uf', uf);
             data.append('email', email);
             data.append('password', password);
-            const resposta = await apiLocal.post('/CadastrarUsuarios', data);
+            const resposta = await apiLocal.post('/CadastrarUsuarios', data)
             toast.success(resposta.data.dados, {
                 toastId: 'ToastId'
-            });
-            // toast.success('Cadastro Efetuado com Sucesso', {
-            //     toastId: 'ToastId'
-            // });
-            navigate('/login');
+            })
+            navigate('/');
         } catch (err) {
-            toast.error('Erro ao Comunicar com Backend', {
-                toastId: 'ToastId'
-            });
-        };
+            console.log(err)
+        }
+        setImagem(null)
+        setNome('')
+        setCep('')
+        setRua('')
+        setNumero('')
+        setBairro('')
+        setCidade('')
+        setUf('')
+        setEmail('')
     };
 
     return (
