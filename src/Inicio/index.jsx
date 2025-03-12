@@ -8,9 +8,9 @@ import Hero from '../Components/Hero'
 import Buscar from '../Components/Buscar'
 import Ofertas from '../Components/Ofertas/Ofertas'
 import CarouselOne from '../Components/Carousel/CarouselOne'
-import Banner1 from '../Components/Banners/BannerOne'
-import Banner2 from '../Components/Banners/BannerTwo'
-import Banner3 from '../Components/Banners/BannerThree'
+import BannerOne from '../Components/Banners/BannerOne'
+import BannerTwo from '../Components/Banners/BannerTwo'
+import BannerThree from '../Components/Banners/BannerThree'
 import Footer from '../Components/Footer'
 
 export default function Inicio() {
@@ -26,10 +26,10 @@ export default function Inicio() {
             <Ofertas />
             <CarouselOne />
             <Ofertas />
-            <Banner1 />
+            <BannerOne />
             <Ofertas />
-            <Banner2 />
-            <Banner3 />
+            <BannerTwo />
+            <BannerThree />
             <Footer />
         </>
     );
