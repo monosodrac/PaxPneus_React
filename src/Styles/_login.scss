@@ -41,7 +41,6 @@
             }
             
             button {
-                margin-bottom: 1rem;
                 padding: .5rem;
                 border: none;
                 border-radius: 7px;
@@ -54,6 +53,10 @@
                     background-color: variaveis.$corFundo;
                     color: variaveis.$corSecundaria;
                 }
+            }
+
+            #btn-cadastrar {
+                margin: 1rem 0;
             }
             
             a {

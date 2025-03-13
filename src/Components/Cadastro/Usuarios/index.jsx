@@ -1,8 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { AutenticadoContexto } from '../../../Contexts/authContexts';
 import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import apiLocal from '../../../Api/apiLocal';
+import apiCep from "../../../Api/apiCep";
+
+import { IMaskInput } from 'react-imask';
 
 import Logo from '../../../assets/imgs/Logo-Pax-rodape.png'
 
@@ -10,10 +13,13 @@ export default function CadUsuarios() {
     const { verificarToken } = useContext(AutenticadoContexto);
     verificarToken();
 
+    const navigate = useNavigate();
+
     const [imagem, setImagem] = useState(null);
     const [nome, setNome] = useState('');
-    const [cpf, setCpf] = useState('');
-    const [cep, setCep] = useState('');
+    const [cpfMask, setCpfMask] = useState('');
+    const [telefoneMask, setTelefoneMask] = useState('');
+    const [cepMask, setCepMask] = useState('');
     const [rua, setRua] = useState('');
     const [numero, setNumero] = useState('');
     const [complemento, setComplemento] = useState('');
@@ -23,10 +29,20 @@ export default function CadUsuarios() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const navigate = useNavigate();
+    const [cepTemp, setCepTemp] = useState('');
+
+    useEffect(() => {
+        function valoresPossiveis() {
+            setRua(cepTemp.logradouro || rua);
+            setBairro(cepTemp.bairro || bairro);
+            setCidade(cepTemp.localidade || cidade);
+            setUf(cepTemp.uf || uf);
+        };
+        valoresPossiveis();
+    }, [buscarCep]);
 
     function getImagem(e) {
-        if(!e.target.files) {
+        if (!e.target.files) {
             return;
         };
         const image = e.target.files[0];
@@ -38,10 +54,14 @@ export default function CadUsuarios() {
     async function cadastrarUsuarios(e) {
         try {
             e.preventDefault();
+            const cpf = cpfMask.match(/\d/g).join("");
+            const telefone = telefoneMask.match(/\d/g).join("");
+            const cep = cepMask.match(/\d/g).join("");
             const data = new FormData();
             data.append('file', imagem);
             data.append('nome', nome);
             data.append('cpf', cpf);
+            data.append('telefone', telefone);
             data.append('cep', cep);
             data.append('rua', rua);
             data.append('numero', numero);
@@ -59,6 +79,12 @@ export default function CadUsuarios() {
         } catch (err) {
             console.log(err);
         };
+    };
+
+    async function buscarCep() {
+        const cepNoMask = cepMask.match(/\d/g).join("");
+        const resposta = await apiCep(`${cepNoMask}/json`)
+        setCepTemp(resposta.data)
     };
 
     return (
@@ -80,19 +106,30 @@ export default function CadUsuarios() {
                             onChange={(e) => setNome(e.target.value)}
                         />
                         <div className="register__ctner__form__item1">
-                            <input
+                            <IMaskInput
                                 type="text"
+                                mask="000.000.000-00"
                                 placeholder="Digite seu CPF"
                                 required
-                                value={cpf}
-                                onChange={(e) => setCpf(e.target.value)}
+                                value={cpfMask}
+                                onChange={(e) => setCpfMask(e.target.value)}
                             />
-                            <input
+                            <IMaskInput
                                 type="text"
+                                mask="(00) 00000-0000"
+                                placeholder="Digite seu Telefone"
+                                required
+                                value={telefoneMask}
+                                onChange={(e) => setTelefoneMask(e.target.value)}
+                            />
+                            <IMaskInput
+                                type="text"
+                                mask="00000-000"
                                 placeholder="Digite seu CEP"
                                 required
-                                value={cep}
-                                onChange={(e) => setCep(e.target.value)}
+                                value={cepMask}
+                                onChange={(e) => setCepMask(e.target.value)}
+                                onBlur={buscarCep}
                             />
                         </div>
                         <div className="register__ctner__form__item2">
@@ -139,7 +176,7 @@ export default function CadUsuarios() {
                                 onChange={(e) => setUf(e.target.value)}
                             />
                         </div>
-                        <div className="register__ctner__form__item1">
+                        <div className="register__ctner__form__item4">
                             <input
                                 type="email"
                                 placeholder="Digite seu Email"

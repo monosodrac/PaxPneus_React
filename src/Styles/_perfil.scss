@@ -9,7 +9,7 @@
         left: 0;
         border: 1px solid variaveis.$corPrincipal;
         background-color: variaveis.$corFundo;
-        
+
         ul {
             padding: 0;
             padding-top: 10rem;
@@ -48,6 +48,7 @@
             input {
                 border-radius: 10px;
                 width: 100%;
+                padding: 0 .3rem;
             }
 
             &__item1 {
@@ -69,6 +70,64 @@
             }
         }
 
-        // .hist__compras {}
+        .info__conta {
+            input {
+                border-radius: 10px;
+                width: 100%;
+                padding: 0 .3rem;
+            }
+        }
+
+        .hist__compras {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2%;
+
+            @media (max-width: 1200px) {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            @media (max-width: 991px) {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            @media (max-width: 767px) {
+                grid-template-columns: 1fr;
+            }
+
+            img {
+                height: 10rem;
+                width: 10rem;
+                margin-bottom: 1rem;
+            }
+
+            &__item {
+                display: flex;
+                flex-direction: column;
+                padding: 1rem;
+                border: 3px solid variaveis.$corPrincipal;
+                border-radius: 10px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background-color: variaveis.$corFundo;
+
+                a {
+                    padding: .5rem;
+                    border: none;
+                    border-radius: 7px;
+                    text-align: center;
+                    text-decoration: none;
+                    font-weight: bold;
+                    background-color: variaveis.$corSecundaria;
+                    color: #000;
+
+                    &:hover {
+                        background-color: variaveis.$corPrincipal;
+                        color: variaveis.$corSecundaria;
+                    }
+                }
+            }
+        }
     }
 }

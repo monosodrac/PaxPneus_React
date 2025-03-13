@@ -51,6 +51,7 @@ export default function Login() {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         <button type="submit">Entrar</button>
+                        <Link id="btn-cadastrar" to="/cadastro-usuario">Cadastrar-se</Link>
                         <Link to="/">Voltar</Link>
                     </form>
                 </div>

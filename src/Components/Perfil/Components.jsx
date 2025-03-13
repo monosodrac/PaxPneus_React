@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AutenticadoContexto } from '../../Contexts/authContexts';
+import { Link } from 'react-router-dom';
 import apiLocal from '../../Api/apiLocal';
 import { CirclesWithBar } from 'react-loader-spinner'
 
-import Logo from '../../assets/imgs/logo.png';
+import Pneu from '../../assets/imgs/icone1.png';
 
 const NavItem = ({ name, isActive, onClick }) => {
     return (
@@ -14,8 +15,7 @@ const NavItem = ({ name, isActive, onClick }) => {
 };
 
 const Usuario = () => {
-    const { verificarToken, token } = useContext(AutenticadoContexto);
-    verificarToken();
+    const { token } = useContext(AutenticadoContexto);
 
     const [dados, setDados] = useState(['']);
 
@@ -86,7 +86,7 @@ const Usuario = () => {
                             <input
                                 type="text"
                                 disabled
-                                value="(66) 66666-6666"
+                                value={dados.telefone}
                             />
                         </p>
                     </div>
@@ -156,33 +156,124 @@ const Usuario = () => {
     );
 };
 
-const Conta = () => (
-    <div className="ctner">
-        <p>
-            <b>Email: </b>
-            <input
-                type="text"
-                disabled
-                value="email@email.com"
-            />
-        </p>
-    </div>
-);
+const Conta = () => {
+    const { token } = useContext(AutenticadoContexto);
 
-const Compras = () => (
-    <div className="ctner">
-        <div className="hist__compras">
-            <img src={Logo} alt="" />
-            <p>
-                <b>Produto: </b>
-                <input
-                    type="text"
-                    disabled
-                    value="email@email.com"
+    const [dados, setDados] = useState(['']);
+
+    const [load, setLoad] = useState(false);
+
+    const idT = localStorage.getItem('@id');
+    const id = JSON.parse(idT);
+
+    useEffect(() => {
+        try {
+            async function consultarDados() {
+                const response = await apiLocal.post('/ConsultarUsuariosUnico', {
+                    id
+                }, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                // console.log(response.data);
+                if (response.data.dados === 'Token Inválido') {
+                    setLoad(false);
+                } else {
+                    setDados(response.data);
+                    setLoad(true);
+                };
+            };
+            consultarDados();
+        } catch (err) { };
+    }, [token, id]);
+
+    return (
+        <div className="ctner">
+            {load === false ?
+                <CirclesWithBar
+                    height="100"
+                    width="100"
+                    color="#4fa94d"
+                    outerCircleColor="#ffffff"
+                    innerCircleColor="#000000"
+                    barColor="#0000ff"
+                    ariaLabel="circles-with-bar-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
                 />
-            </p>
+                :
+                <div className="info__conta">
+                    <p>
+                        <b>Email: </b>
+                        <input
+                            type="text"
+                            disabled
+                            value={dados.email}
+                        />
+                    </p>
+                    <p>
+                        <b>senha: </b>
+                        <input
+                            type="text"
+                            disabled
+                            value="#######"
+                        />
+                    </p>
+                </div>
+            }
         </div>
-    </div>
-);
+    )
+};
+
+const Compras = () => {
+    return (
+        <div className="ctner">
+            <div className="hist__compras">
+                <div className="hist__compras__item">
+                    <img src={Pneu} alt="" />
+                    <p>
+                        <b>Pneu Exemplo</b> <br />
+                        R$222,00
+                    </p>
+                    <Link>Detalhes</Link>
+                </div>
+                <div className="hist__compras__item">
+                    <img src={Pneu} alt="" />
+                    <p>
+                        <b>Pneu Exemplo</b> <br />
+                        R$222,00
+                    </p>
+                    <Link>Detalhes</Link>
+                </div>
+                <div className="hist__compras__item">
+                    <img src={Pneu} alt="" />
+                    <p>
+                        <b>Pneu Exemplo</b> <br />
+                        R$222,00
+                    </p>
+                    <Link>Detalhes</Link>
+                </div>
+                <div className="hist__compras__item">
+                    <img src={Pneu} alt="" />
+                    <p>
+                        <b>Pneu Exemplo</b> <br />
+                        R$222,00
+                    </p>
+                    <Link>Detalhes</Link>
+                </div>
+                <div className="hist__compras__item">
+                    <img src={Pneu} alt="" />
+                    <p>
+                        <b>Pneu Exemplo</b> <br />
+                        R$222,00
+                    </p>
+                    <Link>Detalhes</Link>
+                </div>
+            </div>
+        </div>
+    )
+};
 
 export { Usuario, Conta, Compras, NavItem };
