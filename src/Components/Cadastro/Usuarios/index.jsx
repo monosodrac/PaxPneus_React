@@ -55,19 +55,10 @@ export default function CadUsuarios() {
             toast.success(resposta.data.dados, {
                 toastId: 'ToastId'
             })
-            navigate('/');
+            navigate('/login');
         } catch (err) {
-            console.log(err)
-        }
-        setImagem(null)
-        setNome('')
-        setCep('')
-        setRua('')
-        setNumero('')
-        setBairro('')
-        setCidade('')
-        setUf('')
-        setEmail('')
+            console.log(err);
+        };
     };
 
     return (
