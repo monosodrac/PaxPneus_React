@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import { AutenticadoContexto } from '../../../Contexts/authContexts';
 import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -6,14 +6,16 @@ import apiLocal from '../../../Api/apiLocal';
 import apiCep from "../../../Api/apiCep";
 
 import { IMaskInput } from 'react-imask';
-
-import Logo from '../../../assets/imgs/Logo-Pax-rodape.png'
+import { FiUpload } from "react-icons/fi";
 
 export default function CadUsuarios() {
     const { verificarToken } = useContext(AutenticadoContexto);
     verificarToken();
 
     const navigate = useNavigate();
+
+    const [imageURL, setImageURL] = useState();
+    const imgRef = useRef(null);
 
     const [imagem, setImagem] = useState(null);
     const [nome, setNome] = useState('');
@@ -46,6 +48,10 @@ export default function CadUsuarios() {
             return;
         };
         const image = e.target.files[0];
+        if (image) {
+            const url = URL.createObjectURL(image);
+            setImageURL(url);
+        };
         if (image.type === 'image/png' || image.type === 'image/jpeg' || image.type === 'image/jpg') {
             setImagem(image);
         };
@@ -87,17 +93,32 @@ export default function CadUsuarios() {
         setCepTemp(resposta.data)
     };
 
+    const getImage = () => {
+        imgRef.current.click();
+    };
+    
     return (
         <>
             <section className="register">
                 <div className="register__ctner">
                     <form onSubmit={cadastrarUsuarios} className="register__ctner__form">
-                        <img src={Logo} alt="" />
-                        <input
-                            type="file"
-                            accept="image/jpeg, image/png"
-                            onChange={getImagem}
-                        />
+                        <div className="register__ctner__form__file" onClick={getImage}>
+                            {imageURL ? (
+                                <img src={(imageURL)} alt="Foto selecionada" id="foto-selecionada" />
+                            ) : (
+                                <label for="file1">
+                                    <FiUpload /> Foto de Perfil
+                                </label>
+                            )}
+                            <input
+                                type="file"
+                                name="file1"
+                                id="file1"
+                                ref={imgRef}
+                                accept="image/jpeg, image/png"
+                                onChange={getImagem}
+                            />
+                        </div>
                         <input
                             type="text"
                             placeholder="Digite seu Nome"

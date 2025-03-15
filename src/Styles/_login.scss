@@ -12,6 +12,7 @@
         justify-content: center;
         align-items: center;
         padding: 1rem;
+        margin: 2rem 0;
         border: solid 3px #000;
         border-radius: 7px;
         background-color: variaveis.$corFundo;
@@ -41,8 +42,8 @@
             }
             
             button {
-                padding: .5rem;
-                border: none;
+                padding: .45rem;
+                border: 3px solid transparent;
                 border-radius: 7px;
                 width: 20rem;
                 font-weight: bold;
@@ -50,7 +51,8 @@
                 color: #000;
                 
                 &:hover {
-                    background-color: variaveis.$corFundo;
+                    border-color: variaveis.$corSecundaria;
+                    background-color: variaveis.$corPrincipal;
                     color: variaveis.$corSecundaria;
                 }
             }
@@ -60,8 +62,8 @@
             }
             
             a {
-                padding: .5rem;
-                border: none;
+                padding: .45rem;
+                border: 3px solid transparent;
                 border-radius: 7px;
                 width: 20rem;
                 text-align: center;
@@ -71,7 +73,8 @@
                 color: #000;
                 
                 &:hover {
-                    background-color: variaveis.$corFundo;
+                    border-color: variaveis.$corSecundaria;
+                    background-color: variaveis.$corPrincipal;
                     color: variaveis.$corSecundaria;
                 }
             }
