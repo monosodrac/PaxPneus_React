@@ -1,6 +1,6 @@
 @use 'variaveis';
 
-.register {
+.register_user {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,6 +114,143 @@
 
                 @media (max-width: 767px) {
                     display: block;
+                }
+            }
+
+            input {
+                width: 100%;
+                margin-bottom: 1rem;
+                padding: .5rem;
+                border: 2px solid variaveis.$corSecundaria;
+                border-radius: 7px;
+                outline: none;
+            }
+
+            button {
+                margin-bottom: 1rem;
+                padding: .45rem;
+                border: 3px solid transparent;
+                border-radius: 7px;
+                width: 20rem;
+                font-weight: bold;
+                background-color: variaveis.$corSecundaria;
+                color: #000;
+                transition: .3s;
+
+                &:hover {
+                    border-color: variaveis.$corSecundaria;
+                    background-color: variaveis.$corPrincipal;
+                    color: variaveis.$corSecundaria;
+                }
+
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
+            }
+
+            a {
+                padding: .55rem;
+                border: 3px solid transparent;
+                border-radius: 7px;
+                width: 20rem;
+                text-align: center;
+                text-decoration: none;
+                font-weight: bold;
+                background-color: variaveis.$corSecundaria;
+                color: #000;
+                transition: .3s;
+
+                &:hover {
+                    border-color: variaveis.$corSecundaria;
+                    background-color: variaveis.$corPrincipal;
+                    color: variaveis.$corSecundaria;
+                }
+
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+.register_prod {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &__ctner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        margin: 2rem 0;
+        border: solid 3px #000;
+        border-radius: 7px;
+        background-color: variaveis.$corFundo;
+        
+        img {
+            width: 10rem;
+            margin: 2rem;
+        }
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            border: solid 3px variaveis.$corSecundaria;
+            border-radius: 7px;
+            width: 100%;
+            background-color: #333;
+
+            input[type="file"] {
+                display: none;
+            }
+
+            label {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: .5rem 0;
+                border: 3px solid transparent;
+                border-radius: 10px;
+                margin-bottom: 1rem;
+                width: 10rem;
+                font-weight: bold;
+                background-color: variaveis.$corSecundaria;
+                color: variaveis.$corPrincipal;
+                cursor: pointer;
+                transition: .3s;
+
+                &:hover {
+                    border-color: variaveis.$corSecundaria;
+                    background-color: variaveis.$corPrincipal;
+                    color: variaveis.$corSecundaria;
+                }
+
+                svg {
+                    margin-right: .3rem;
+                }
+            }
+
+            &__file {
+                #foto-selecionada {
+                    margin-bottom: 2rem;
+                    border-radius: 10px;
+                    height: 10rem;
+                    width: 10rem;
+                    cursor: pointer;
+                    box-shadow: 0px 2px 10px 4px variaveis.$corSecundaria;
+
+                    &:hover {
+                        transform: scale(0.99);
+                    }
                 }
             }
 

@@ -35,7 +35,7 @@ export default function Login() {
         <>
             <section className="login">
                 <div className="login__ctner">
-                    <img src={Logo} alt="" />
+                    <img src={Logo} alt="Logo da Pax Pneus" />
                     <form onSubmit={makeLogin}>
                         <input
                             type="email"

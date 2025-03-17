@@ -99,10 +99,10 @@ export default function CadUsuarios() {
     
     return (
         <>
-            <section className="register">
-                <div className="register__ctner">
-                    <form onSubmit={cadastrarUsuarios} className="register__ctner__form">
-                        <div className="register__ctner__form__file" onClick={getImage}>
+            <section className="register_user">
+                <div className="register_user__ctner">
+                    <form onSubmit={cadastrarUsuarios} className="register_user__ctner__form">
+                        <div className="register_user__ctner__form__file" onClick={getImage}>
                             {imageURL ? (
                                 <img src={(imageURL)} alt="Foto selecionada" id="foto-selecionada" />
                             ) : (
@@ -126,7 +126,7 @@ export default function CadUsuarios() {
                             value={nome}
                             onChange={(e) => setNome(e.target.value)}
                         />
-                        <div className="register__ctner__form__item1">
+                        <div className="register_user__ctner__form__item1">
                             <IMaskInput
                                 type="text"
                                 mask="000.000.000-00"
@@ -153,7 +153,7 @@ export default function CadUsuarios() {
                                 onBlur={buscarCep}
                             />
                         </div>
-                        <div className="register__ctner__form__item2">
+                        <div className="register_user__ctner__form__item2">
                             <input
                                 type="text"
                                 placeholder="Rua"
@@ -175,7 +175,7 @@ export default function CadUsuarios() {
                                 onChange={(e) => setComplemento(e.target.value)}
                             />
                         </div>
-                        <div className="register__ctner__form__item3">
+                        <div className="register_user__ctner__form__item3">
                             <input
                                 type="text"
                                 placeholder="Bairro"
@@ -197,7 +197,7 @@ export default function CadUsuarios() {
                                 onChange={(e) => setUf(e.target.value)}
                             />
                         </div>
-                        <div className="register__ctner__form__item4">
+                        <div className="register_user__ctner__form__item4">
                             <input
                                 type="email"
                                 placeholder="Digite seu Email"
