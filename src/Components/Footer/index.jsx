@@ -25,31 +25,31 @@ export default function Footer() {
                     <div className="footer2">
                         <ul>
                             <li>
-                                <a target="_blank" href="">
+                                <a target="_blank" href="https://api.whatsapp.com/send?phone=5514991920033&location=7943">
                                     <FaWhatsapp />
                                     (14) 99192-0033
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="">
+                                <a target="_blank" href="https://api.whatsapp.com/send?phone=5511975269029&location=7943">
                                     <FaWhatsapp />
                                     (11) 97526-9029
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="">
+                                <a target="_blank" href="https://www.instagram.com/paxpneus/?location=7943">
                                     <FaInstagram />
                                     Instagram
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="">
+                                <a target="_blank" href="https://www.facebook.com/paxpneus?location=7943">
                                     <FaFacebook />
                                     Facebook
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="">
+                                <a target="_blank" href="https://www.youtube.com/channel/UCrvoYFyH52vRTeFjdZAHF7A">
                                     <FaYoutube />
                                     Youtube
                                 </a>
@@ -61,7 +61,7 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="">
+                                <a target="_blank" href="https://blog.paxpneus.com.br/">
                                     <FaBlog />
                                     Confira nosso Blog
                                 </a>
@@ -74,7 +74,7 @@ export default function Footer() {
                         </ul>
                         <ul id="politicas">
                             <li>
-                                <a target="_blank" href="">
+                                <a target="_blank" href="https://paxpneus.com.br/reembolso_devolucoes">
                                     <p>Política de reembolsos e devoluções</p>
                                 </a>
                             </li>
@@ -84,7 +84,7 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="">
+                                <a target="_blank" href="http://paxpneus.com.br/politica-de-cookies-br">
                                     <p>Política de Cookies (BR)</p>
                                 </a>
                             </li>
