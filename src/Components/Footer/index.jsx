@@ -37,13 +37,13 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://www.instagram.com/paxpneus/?location=7943">
+                                <a target="_blank" href="https://www.instagram.com/paxpneus">
                                     <FaInstagram />
                                     Instagram
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://www.facebook.com/paxpneus?location=7943">
+                                <a target="_blank" href="https://www.facebook.com/paxpneus">
                                     <FaFacebook />
                                     Facebook
                                 </a>
@@ -79,7 +79,7 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="">
+                                <a target="_blank" href="/tempo-garantia">
                                     <p>Tempo de Garantia</p>
                                 </a>
                             </li>

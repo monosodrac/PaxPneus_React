@@ -60,11 +60,10 @@
             font-weight: bold;
             color: #fff;
             text-decoration: none;
-            transition: transform 1s ease;
-
+            transition: .3s;
+            
             &:hover {
                 background-color: lighten(#000, 3%);
-                transition: transform 1s ease;
             }
         }
     }
