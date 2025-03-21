@@ -23,7 +23,7 @@ export default function Header() {
                     <div className="header">
                         <section className="first">
                             <h2>
-                                <a href="#" id="lojas">
+                                <a href="/" id="lojas">
                                     Nossas Lojas
                                 </a>
                             </h2>
@@ -63,7 +63,7 @@ export default function Header() {
 
                         <section className="second">
                             <h1>
-                                <a href="#">
+                                <a href="/">
                                     <img src={Logo} alt="Logo da Pax Pneus" />
                                 </a>
                             </h1>

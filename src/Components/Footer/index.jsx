@@ -74,7 +74,7 @@ export default function Footer() {
                         </ul>
                         <ul id="politicas">
                             <li>
-                                <a target="_blank" href="https://paxpneus.com.br/reembolso_devolucoes">
+                                <a target="_blank" href="/reembolso-devolucoes">
                                     <p>Política de reembolsos e devoluções</p>
                                 </a>
                             </li>
@@ -84,7 +84,7 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="http://paxpneus.com.br/politica-de-cookies-br">
+                                <a target="_blank" href="/cookies">
                                     <p>Política de Cookies (BR)</p>
                                 </a>
                             </li>
