@@ -48,6 +48,10 @@
             &:hover {
                 animation: pular 1s ease;
             }
+            
+            @media (max-width: 767px) {
+                display: none;
+            }
         }
         
         a {

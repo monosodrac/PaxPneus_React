@@ -51,7 +51,10 @@ export default function Ofertas() {
                         <div className="ofertas__tabs">
                             {dadosProdutos.map((item, index) => (
                                 <div className="ofertas__tabs__item" key={index}>
-                                    <img src={`http://localhost:3333/files/${item.banner}`} alt={item.nome} />
+                                    <img 
+                                        src={`http://localhost:3333/files/${item.banner}`}
+                                        alt={item.nome}
+                                    />
                                     <p className="text"><b>{item.nome}</b></p>
                                     <h2 className="text"><b>{item.preco}</b></h2>
                                     <button>Adicionar ao Carrinho</button>

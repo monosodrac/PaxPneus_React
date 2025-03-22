@@ -121,6 +121,7 @@
                     font-weight: bold;
                     background-color: variaveis.$corSecundaria;
                     color: #000;
+                    transition: .3s;
 
                     &:hover {
                         background-color: variaveis.$corPrincipal;
