@@ -64,7 +64,7 @@ export default function Header() {
                         <section className="second">
                             <h1>
                                 <a href="/">
-                                    <img src={Logo} alt="Logo da Pax Pneus" />
+                                    <img title="Pax Pneus" src={Logo} alt="Logo da Pax Pneus" />
                                 </a>
                             </h1>
                             <input type="text" placeholder="Pesquisar..." />

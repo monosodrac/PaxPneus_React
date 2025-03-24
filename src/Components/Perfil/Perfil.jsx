@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AutenticadoContexto } from '../../Contexts/authContexts';
-import apiLocal from '../../Api/apiLocal';
 
 import { NavItem, Usuario, Conta, Compras } from './Components'
 

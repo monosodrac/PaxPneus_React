@@ -81,6 +81,7 @@ footer {
                     a {
                         text-decoration: none;
                         color: #C6C6C6;
+                        transition: .3s;
 
                         &:hover {
                             color: #fff;
@@ -96,6 +97,7 @@ footer {
             #politicas {
                 li {
                     border-bottom: 1px solid transparent;
+                    transition: .3s;
 
                     &:hover {
                         border-color: #C6C6C6;
