@@ -162,7 +162,7 @@ export default function CadUsuarios() {
                                 onChange={(e) => setRua(e.target.value)}
                             />
                             <input
-                                type="text"
+                                type="number"
                                 placeholder="Nº"
                                 required
                                 value={numero}

@@ -86,8 +86,9 @@ export default function CadProdutos() {
                             onChange={(e) => setNome(e.target.value)}
                         />
                         <input
-                            type="text"
+                            type="number"
                             placeholder="Preço"
+                            step="0.01"
                             required
                             value={preco}
                             onChange={(e) => setPreco(e.target.value)}
