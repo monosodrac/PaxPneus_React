@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import { AutenticadoContexto } from '../../Contexts/authContexts';
@@ -13,7 +13,6 @@ export default function Login() {
     const { verificarToken, loginEntrada } = useContext(AutenticadoContexto);
     verificarToken();
 
-    const navigator = useNavigate();
 
     async function makeLogin(e) {
         e.preventDefault();
@@ -22,12 +21,10 @@ export default function Login() {
         }
         try {
             await loginEntrada(email, password);
-            navigator("/");
         } catch (err) {
             toast.error("Usuario ou Senha Incorretos", {
                 toastId: 'ToastId'
             });
-            navigator("/login");
         };
     };
 
