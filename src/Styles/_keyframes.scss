@@ -3,61 +3,61 @@
         transform: translateY(0); /* Posição original */
     }
     5% {
-        transform: translateY(.2rem); /* Pular para cima */
+        transform: translateY(.2rem); /* Subindo */
     }
     10% {
-        transform: translateY(.4rem); /* Pular para cima */
+        transform: translateY(.4rem); /* Subindo ao topo */
     }
     15% {
-        transform: translateY(.2rem); /* Pular para cima */
+        transform: translateY(.2rem); /* Descendo */
     }
     20% {
         transform: translateY(0); /* Voltar à posição original */
     }
     25% {
-        transform: translateY(-0.15rem); /* Voltar à posição original */
+        transform: translateY(-0.15rem); /* Descendo */
     }
     30% {
-        transform: translateY(-0.3rem); /* Pular para cima */
+        transform: translateY(-0.3rem); /* Descendo ao fundo */
     }
     35% {
-        transform: translateY(-0.15rem); /* Pular para cima */
+        transform: translateY(-0.15rem); /* Subindo */
     }
     40% {
         transform: translateY(0); /* Voltar à posição original */
     }
     45% {
-        transform: translateY(.1rem); /* Voltar à posição original */
+        transform: translateY(.1rem); /* Subindo */
     }
     50% {
-        transform: translateY(.2rem); /* Pular para cima */
+        transform: translateY(.2rem); /* Topo */
     }
     55% {
-        transform: translateY(.1rem); /* Pular para cima */
+        transform: translateY(.1rem); /* Descendo */
     }
     60% {
         transform: translateY(0); /* Voltar à posição original */
     }
     65% {
-        transform: translateY(-0.05rem); /* Voltar à posição original */
+        transform: translateY(-0.05rem); /* Descendo */
     }
     70% {
-        transform: translateY(-0.1rem); /* Pular para cima */
+        transform: translateY(-0.1rem); /* Fundo */
     }
     75% {
-        transform: translateY(-0.05rem); /* Pular para cima */
+        transform: translateY(-0.05rem); /* Subindo */
     }
     80% {
         transform: translateY(0); /* Voltar à posição original */
     }
     85% {
-        transform: translateY(.02rem); /* Voltar à posição original */
+        transform: translateY(.02rem); /* Subindo */
     }
     90% {
-        transform: translateY(.05rem); /* Pular para cima */
+        transform: translateY(.05rem); /* Topo */
     }
     95% {
-        transform: translateY(.02rem); /* Pular para cima */
+        transform: translateY(.02rem); /* Descendo */
     }
     100% {
         transform: translateY(0); /* Voltar à posição original */
