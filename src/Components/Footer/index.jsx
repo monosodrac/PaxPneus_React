@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 import { FaWhatsapp, FaFacebook, FaYoutube, FaBlog, FaRegClock } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { MdMailOutline } from "react-icons/md";
@@ -14,11 +16,11 @@ export default function Footer() {
                         <h3>Evite dor de cabeça!</h3>
                         <h4>CONFIANÇA E QUALIDADE É</h4>
                         <img src={Logo} alt="Logo da Pax Pneus" title="Pax Pneus" />
-                            <p>
-                                São 16 lojas entre São Paulo e Paraná para te atender. Atendimento excepcional, sem pegadinhas, sem
-                                dor de cabeça. Antes de comprar pela internet, sempre confira em lugares como o Google as avaliações
-                                da empresa.
-                            </p>
+                        <p>
+                            São 16 lojas entre São Paulo e Paraná para te atender. Atendimento excepcional, sem pegadinhas, sem
+                            dor de cabeça. Antes de comprar pela internet, sempre confira em lugares como o Google as avaliações
+                            da empresa.
+                        </p>
                     </div>
 
                     <div className="footer2">
@@ -30,34 +32,34 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://api.whatsapp.com/send?phone=5511975269029&location=7943"  title="whatsapp">
+                                <a target="_blank" href="https://api.whatsapp.com/send?phone=5511975269029&location=7943" title="whatsapp">
                                     <FaWhatsapp />
                                     (11) 97526-9029
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://www.instagram.com/paxpneus"  title="instagram">
+                                <a target="_blank" href="https://www.instagram.com/paxpneus" title="instagram">
                                     <FaInstagram />
                                     Instagram
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://www.facebook.com/paxpneus"  title="facebook">
+                                <a target="_blank" href="https://www.facebook.com/paxpneus" title="facebook">
                                     <FaFacebook />
                                     Facebook
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://www.youtube.com/channel/UCrvoYFyH52vRTeFjdZAHF7A"  title="youtube">
+                                <a target="_blank" href="https://www.youtube.com/channel/UCrvoYFyH52vRTeFjdZAHF7A" title="youtube">
                                     <FaYoutube />
                                     Youtube
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="/" title="e-mail">
+                                <Link target="_blank" to="/" title="e-mail">
                                     <MdMailOutline />
                                     sac@paxpneus.com.br
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <a target="_blank" href="https://blog.paxpneus.com.br/" title="blog">
@@ -73,19 +75,19 @@ export default function Footer() {
                         </ul>
                         <ul id="politicas">
                             <li>
-                                <a target="_blank" href="/reembolso-devolucoes">
+                                <Link to="/reembolso-devolucoes">
                                     <p>Política de reembolsos e devoluções</p>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a target="_blank" href="/tempo-garantia">
+                                <Link to="/tempo-garantia">
                                     <p>Tempo de Garantia</p>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a target="_blank" href="/cookies">
+                                <Link to="/cookies">
                                     <p>Política de Cookies (BR)</p>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

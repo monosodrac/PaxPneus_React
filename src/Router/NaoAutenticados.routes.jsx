@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Inicio from '../Inicio';
-import Login from '../Components/Login';
-import CadUsuarios from '../Components/Cadastro/Usuarios';
-import TempGarantia from '../Components/Footer/TempGarantia';
-import Reembolso from '../Components/Footer/Reembolso';
-import Cookies from '../Components/Footer/Cookies';
+import Inicio from '../Pages/Inicio';
+import Login from '../Pages/Login';
+import CadUsuarios from '../Pages/Cadastro/Usuarios';
+import TempGarantia from '../Pages/Footer/TempGarantia';
+import Reembolso from '../Pages/Footer/Reembolso';
+import Cookies from '../Pages/Footer/Cookies';
 
 export default function Autenticados() {
     return (

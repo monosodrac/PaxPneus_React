@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { AutenticadoContexto } from '../../Contexts/authContexts';
 
-import { NavItem, Usuario, Conta, Compras } from './Components'
+import { AutenticadoContexto } from '../../Contexts/authContexts';
+import { NavItem, Usuario, Conta, Compras } from '../../Components/Perfil/Components'
 
 export default function Perfil() {
     const { verificarToken } = useContext(AutenticadoContexto);

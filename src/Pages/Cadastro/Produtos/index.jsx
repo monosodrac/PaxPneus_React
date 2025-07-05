@@ -1,11 +1,11 @@
 import React, { useContext, useRef, useState } from "react";
-import { AutenticadoContexto } from "../../../Contexts/authContexts";
-import apiLocal from "../../../Api/apiLocal";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-
-import Logo from '../../../assets/imgs/Logo.png'
 import { FiUpload } from "react-icons/fi";
+
+import { AutenticadoContexto } from "../../../Contexts/authContexts";
+import apiLocal from "../../../Api/apiLocal";
+import Logo from '../../../assets/imgs/Logo.png'
 
 export default function CadProdutos() {
     const { verificarToken } = useContext(AutenticadoContexto);

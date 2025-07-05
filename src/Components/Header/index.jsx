@@ -26,9 +26,9 @@ export default function Header() {
                     <div className="header">
                         <section className="first">
                             <h2>
-                                <a href="/" id="lojas">
+                                <Link to="/" id="lojas">
                                     Nossas Lojas
-                                </a>
+                                </Link>
                             </h2>
                             <ul>
                                 {autenticado === true ?

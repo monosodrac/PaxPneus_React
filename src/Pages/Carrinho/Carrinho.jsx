@@ -1,8 +1,8 @@
 import React from "react";
 
-import Header from "../Header";
+import Header from "../../Components/Header";
 import Manutencao from "../manutencao";
-import Footer from "../Footer";
+import Footer from "../../Components/Footer";
 
 export default function Carrinho() {
     return (

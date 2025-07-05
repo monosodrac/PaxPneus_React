@@ -1,15 +1,16 @@
 @use 'variaveis';
 
 .perfil {
-    display: flex;
+    display: grid;
+    grid-template-columns: 14rem auto;
     height: 100vh;
-
+    
     aside {
         position: relative;
         left: 0;
         border-right: 1px solid variaveis.$corPrincipal;
         background-color: variaveis.$corFundo;
-
+        
         ul {
             padding: 0;
             padding-top: 10rem;
@@ -17,9 +18,9 @@
             list-style: none;
 
             li {
-                width: 100%;
-                border: 1px solid variaveis.$corPrincipal;
                 padding: 2rem;
+                border: 1px solid variaveis.$corPrincipal;
+                max-width: 100%;
                 color: variaveis.$corPrincipal;
                 cursor: pointer;
 

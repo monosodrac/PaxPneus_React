@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Dashboard from '../Dashboard'
-import Perfil from '../Components/Perfil/Perfil';
-import CadProdutos from '../Components/Cadastro/Produtos';
-import Carrinho from '../Components/Carrinho/Carrinho';
+import Dashboard from '../Pages/Dashboard'
+import Perfil from '../Pages/Perfil/Perfil';
+import Carrinho from '../Pages/Carrinho/Carrinho';
 
-import TempGarantia from '../Components/Footer/TempGarantia';
-import Reembolso from '../Components/Footer/Reembolso';
-import Cookies from '../Components/Footer/Cookies';
+import CadProdutos from '../Pages/Cadastro/Produtos';
+import TempGarantia from '../Pages/TempGarantia';
+import Reembolso from '../Pages/Reembolso';
+import Cookies from '../Pages/Cookies';
 
 export default function Autenticados() {
     return (
