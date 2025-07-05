@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
-import { AutenticadoContexto } from '../../Contexts/authContexts';
 import { Link, useNavigate } from "react-router-dom";
+
+import { AutenticadoContexto } from '../../Contexts/authContexts';
+
 import { IoSearch } from "react-icons/io5";
+import { CiUser } from "react-icons/ci";
 
 import Logo from '../../assets/imgs/logo.png'
 
